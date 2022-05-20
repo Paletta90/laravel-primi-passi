@@ -15,4 +15,28 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
+}) -> name('home');
+
+Route::get('/contatti', function () {
+    // $data = [
+    //     'phone' => '333433534343',
+    //     'address' => 'Via A.pep 14',
+    //     'city' => 'Teramo'
+    // ];
+    $data = [
+        'contatti' => [
+            '333433534343',
+            'Via A.pep 14',
+            'Teramo'
+        ]
+    ];
+
+    return view('contatti', $data);
+})-> name('contatti');
+
+Route::get('/info', function () {
+    return view('info');
+})-> name('info');
+// Route::get('/', function () {
+//     return view('info');
+// });
